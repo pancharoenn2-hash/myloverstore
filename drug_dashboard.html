@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Drug Catalog Dashboard</title><link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#ffffff;--panel:#ffffff;--ink:#040404;--muted:#637a77;--line:#f0f0f0;--blue:#394d45;--teal:#637a77;--purple:#394d45;--orange:#e7cfb9;--shadow:none}body{font-weight:300;letter-spacing:.16px}h1,h2,h3,.brand,.title,.kpi .value{font-weight:300}.eyebrow{font-weight:400;letter-spacing:1.3px}.navlabel,.sidefoot,.caption{letter-spacing:1.3px;font-weight:400}button,.btn,.nav button,.kpi,.card,.tag,.note,input,select{border-radius:0!important;box-shadow:none!important}.btn{font-weight:300}.btn.primary{background:#394d45;border-color:#394d45}.side{background:#040404}.logo{background:#394d45;border-radius:0}.nav button.active,.nav button:hover{background:#394d45}.nav .num{background:#1a1a1a;border-radius:0}.tag{background:#f0f0f0;color:#040404}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.5 Raleway,"Noto Sans Thai",Tahoma,sans-serif}.app{display:flex;min-height:100vh}.side{width:245px;background:#13233d;color:#dbe6f5;padding:26px 18px;position:fixed;inset:0 auto 0 0;display:flex;flex-direction:column;z-index:5}.brand{font-size:19px;font-weight:800;color:#fff;display:flex;gap:10px;align-items:center}.logo{width:36px;height:36px;border-radius:12px;background:#2c68d9;display:grid;place-items:center;font-size:20px}.subbrand{font-size:11px;color:#91a5c1;margin:6px 0 30px 46px}.navlabel{font-size:10px;letter-spacing:1.5px;color:#8194b1;margin:12px 10px}.nav button{width:100%;border:0;background:transparent;color:#b8c8df;text-align:left;padding:13px 12px;border-radius:10px;margin:3px 0;cursor:pointer;font:inherit}.nav button.active,.nav button:hover{background:#233c61;color:white}.nav .num{display:inline-grid;place-items:center;width:25px;height:25px;background:#304c75;border-radius:8px;margin-right:9px;font-size:11px}.sidefoot{margin-top:auto;color:#8da2bf;font-size:11px;line-height:1.7;padding:12px}.main{margin-left:245px;width:calc(100% - 245px);padding:28px 32px 45px;max-width:1700px}.top{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:24px}.eyebrow{color:var(--blue);font-weight:700;font-size:11px;letter-spacing:1.5px;text-transform:uppercase}.title{font-size:27px;font-weight:800;margin:3px 0}.desc{color:var(--muted);font-size:13px}.actions{display:flex;gap:9px;align-items:center}.btn{border:1px solid var(--line);background:white;color:#33445f;border-radius:9px;padding:10px 13px;cursor:pointer;font:600 12px inherit}.btn.primary{background:var(--blue);color:white;border-color:var(--blue)}.modebar{display:none}.filters{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:18px}.filters input,.filters select{background:#fff;border:1px solid var(--line);border-radius:9px;padding:10px 12px;color:#33445f;min-width:155px;outline:none}.filters input{flex:1;min-width:220px}.kpis{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:13px;margin-bottom:17px}.kpi,.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow)}.kpi{padding:17px 18px;min-height:112px;position:relative;overflow:hidden}.kpi:after{content:"";position:absolute;width:65px;height:65px;border-radius:50%;right:-18px;top:-20px;background:#edf4ff}.kpi .label{font-size:11px;color:var(--muted);font-weight:600}.kpi .value{font-size:27px;font-weight:800;margin-top:8px;letter-spacing:-.5px}.kpi .hint{font-size:10px;color:#9aa8b9;margin-top:2px}.grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:15px;margin-bottom:15px}.card{padding:18px;min-width:0}.span-4{grid-column:span 4}.span-5{grid-column:span 5}.span-6{grid-column:span 6}.span-7{grid-column:span 7}.span-8{grid-column:span 8}.span-12{grid-column:span 12}.cardhead{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:14px}.card h3{margin:0;font-size:14px}.card .caption{font-size:11px;color:var(--muted);margin-top:3px}.chart{width:100%;height:265px;position:relative}.chart svg{width:100%;height:100%;overflow:visible}.legend{display:flex;flex-wrap:wrap;gap:9px 14px;margin-top:8px}.leg{display:flex;align-items:center;gap:6px;color:#64748b;font-size:11px}.dot{width:8px;height:8px;border-radius:3px;display:inline-block}.tablewrap{overflow:auto;max-height:440px}table{width:100%;border-collapse:collapse;white-space:nowrap}th{text-align:left;color:#8190a5;font-size:10px;letter-spacing:.5px;text-transform:uppercase;background:#f8fafd;position:sticky;top:0}td,th{padding:11px 10px;border-bottom:1px solid #edf1f6}td{font-size:12px}tbody tr:hover{background:#f8fbff}.tag{display:inline-block;background:#edf4ff;color:#315da8;padding:4px 8px;border-radius:20px;font-size:10px}.smallmuted{color:#8291a6;font-size:11px}.empty{padding:30px;text-align:center;color:#8b98aa}.mode{display:none}.mode.active{display:block}.note{background:#fff8e9;border:1px solid #f6e3b7;color:#87601e;padding:11px 14px;border-radius:10px;font-size:11px;margin:0 0 15px}.fileinput{display:none}.status{font-size:11px;color:#8291a6}.treemap{display:grid;gap:4px;height:260px;grid-template-columns:repeat(12,1fr);grid-auto-rows:1fr}.treecell{border-radius:6px;color:white;padding:9px;display:flex;flex-direction:column;justify-content:space-between;min-width:0;overflow:hidden}.treecell b{font-size:11px;line-height:1.3}.treecell span{font-size:10px;opacity:.9}
+@media(max-width:1100px){.kpis{grid-template-columns:repeat(3,1fr)}.span-4,.span-5{grid-column:span 6}.span-7,.span-8{grid-column:span 12}}
+@media(max-width:720px){.side{width:65px;padding:18px 8px}.brand span:not(.logo),.subbrand,.navlabel,.nav button .txt,.sidefoot{display:none}.brand{justify-content:center}.nav{margin-top:28px}.nav button{text-align:center;padding:10px 3px}.nav .num{margin:0}.main{margin-left:65px;width:calc(100% - 65px);padding:20px 13px}.top{align-items:flex-start;flex-direction:column}.title{font-size:22px}.actions{width:100%;flex-wrap:wrap}.kpis{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.kpi{padding:13px;min-height:98px}.kpi .value{font-size:23px}.span-4,.span-5,.span-6,.span-7,.span-8{grid-column:span 12}.chart{height:235px}.filters input{min-width:100%}.filters select{flex:1}}
+
+/* Layout stabilization: prevent cards, charts and controls from overlapping */
+html{scroll-behavior:smooth}
+body{overflow-x:hidden}
+.app{width:100%;min-width:0}
+.side{height:100vh;overflow-y:auto;overflow-x:hidden}
+.main{min-width:0;margin-right:auto}
+.top{align-items:flex-start;flex-wrap:wrap}
+.top>div:first-child{flex:1 1 300px;min-width:0}
+.actions{flex:0 1 auto;flex-wrap:wrap;justify-content:flex-end;min-width:0}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:38px;white-space:nowrap;font-family:inherit}
+.filters>*{min-width:0;max-width:100%}
+.filters input{min-width:240px}
+.kpi{min-width:0;overflow-wrap:anywhere}
+.kpi .value{font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.grid{align-items:stretch;min-width:0}
+.card{min-width:0;overflow:hidden}
+.cardhead{min-width:0;flex-wrap:wrap}
+.cardhead>div{min-width:0}
+.chart{min-width:0;max-width:100%;height:280px;overflow:hidden}
+.chart svg{display:block;max-width:100%;overflow:hidden}
+.legend{max-height:88px;overflow:auto}
+.tablewrap{width:100%;max-width:100%;overflow:auto;overscroll-behavior-x:contain}
+table{min-width:900px}
+.treemap{min-height:260px;overflow:hidden}
+@media(max-width:1250px){
+ .side{width:215px;padding:22px 14px}
+ .main{margin-left:215px;width:calc(100% - 215px);padding:24px 22px 40px}
+ .kpis{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .span-4,.span-5{grid-column:span 6}
+}
+@media(max-width:900px){
+ .side{width:190px;padding:20px 12px}
+ .main{margin-left:190px;width:calc(100% - 190px);padding:20px 16px 36px}
+ .top{display:flex;flex-direction:column;align-items:stretch}
+ .actions{justify-content:flex-start}
+ .filters input{flex:1 1 100%;min-width:100%}
+ .filters select{flex:1 1 30%;min-width:130px}
+ .kpis{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .span-4,.span-5,.span-6,.span-7,.span-8{grid-column:span 12}
+ .chart{height:260px}
+}
+@media(max-width:600px){
+ .app{display:block}
+ .side{position:relative;inset:auto;width:100%;height:auto;min-height:0;padding:12px 14px;display:block;overflow:visible}
+ .brand{font-size:17px}
+ .subbrand,.navlabel,.sidefoot{display:none}
+ .nav{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin-top:12px}
+ .nav button{margin:0;padding:9px 5px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;min-width:0;font-size:10px;line-height:1.25}
+ .nav .num{margin:0;width:22px;height:22px}
+ .nav button .txt{display:block;white-space:normal}
+ .main{margin:0;width:100%;max-width:none;padding:18px 12px 30px}
+ .top{gap:12px;margin-bottom:16px}
+ .title{font-size:22px;line-height:1.25}
+ .desc{line-height:1.55}
+ .actions{width:100%;gap:7px}
+ .status{flex:1 1 100%}
+ .btn{font-size:11px;padding:9px 10px}
+ .filters{gap:7px;margin-bottom:12px}
+ .filters input{min-width:100%;width:100%}
+ .filters select{flex:1 1 calc(50% - 7px);min-width:0;width:calc(50% - 7px)}
+ .note{font-size:10px;line-height:1.6}
+ .kpis{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+ .kpi{padding:12px;min-height:92px}
+ .kpi .label{font-size:10px}
+ .kpi .value{font-size:22px;margin-top:5px}
+ .grid{gap:10px;margin-bottom:10px}
+ .card{padding:13px;border-radius:12px}
+ .card h3{font-size:13px}
+ .card .caption{font-size:10px;line-height:1.45}
+ .chart{height:235px}
+ .treemap{height:auto;min-height:220px;grid-auto-rows:minmax(48px,auto)}
+ .tablewrap{max-height:360px}
+ footer{font-size:10px}
+}
+@media(max-width:360px){
+ .main{padding-left:9px;padding-right:9px}
+ .kpi{padding:10px}
+ .kpi .value{font-size:19px}
+ .nav button{font-size:9px}
+ .chart{height:215px}
+}
+
+
+/* Readability pass: compact hierarchy, restrained spacing, no repeated visual summaries */
+.title{font-size:25px}.desc{max-width:720px}.top{margin-bottom:17px}.filters{margin-bottom:12px}.kpis{gap:10px;margin-bottom:13px}.kpi{min-height:96px;padding:14px 16px}.kpi .value{font-size:25px;margin-top:5px}.kpi .hint{font-size:10px}.grid{gap:12px;margin-bottom:12px}.card{padding:15px}.cardhead{margin-bottom:9px}.card h3{font-size:13px}.card .caption{font-size:10px}.chart{height:245px}.note{padding:8px 12px;margin-bottom:12px}.tablewrap{max-height:390px}td,th{padding:8px 9px}td{font-size:11px}th{font-size:9px}.tag{padding:3px 7px}
+@media(max-width:900px){.kpis{gap:8px}.kpi{min-height:88px}.chart{height:230px}}
+@media(max-width:600px){.card{padding:12px}.kpi{min-height:84px}.kpi .value{font-size:21px}.chart{height:220px}}
+body[data-theme="dark"]{--bg:#040404;--panel:#0d0d0d;--ink:#ffffff;--muted:#a9b5b2;--line:#2a2a2a;--shadow:none}
+body[data-theme="dark"] .btn{background:transparent;color:#ffffff;border-color:#ffffff}
+body[data-theme="dark"] .btn.primary,body[data-theme="dark"] #themeBtn{background:#394d45;border-color:#394d45;color:#ffffff}
+body[data-theme="dark"] .kpi{background:var(--panel)}
+body[data-theme="dark"] .card{background:var(--panel)}
+body[data-theme="dark"] .chart svg text{fill:#c4d2e6}
+body[data-theme="dark"] .chart svg path[stroke="white"]{stroke:#162032}
+body[data-theme="dark"] .chart svg circle[fill="white"]{fill:#162032}
+body[data-theme="dark"] .chart svg line[stroke="#dce4ee"]{stroke:#2c3c58}
+body[data-theme="dark"] .chart svg rect[fill="#f2f6fb"]{fill:#1d2a40}
+body[data-theme="dark"] .treemap{color:#ffffff}
+body[data-theme="dark"] .treecell{border:1px solid rgba(255,255,255,.2)}
+body[data-theme="dark"] .tablewrap table{background:var(--panel)}
+body[data-theme="dark"] table th{background:#1a1a1a;color:#ffffff}
+body[data-theme="dark"] table td{border-color:#2a2a2a;color:#f0f0f0}
+body[data-theme="dark"] table tr:hover td{background:#1a1a1a}
+body[data-theme="dark"] .note{background:#1a1a1a;color:#e7cfb9}
+body[data-theme="dark"] .tag{background:#1a1a1a;color:#e7cfb9}
+#themeBtn{min-width:38px;padding:10px 11px;font-size:15px}
+.kpi .value{color:#040404}
+.legend,.leg{color:#637a77}
+footer{color:#637a77}
+body[data-theme="dark"] .kpi .value,body[data-theme="dark"] h3{color:#ffffff}
+.source-ok{background:#e4f6eb!important;color:#187343!important}.source-fallback{background:#fff2c9!important;color:#805b00!important}
+</style></head><body><div class="app"><aside class="side"><div class="brand"><span class="logo">✚</span><span>MED<span style="color:#79a9ff">INSIGHT</span></span></div><div class="subbrand">DRUG CATALOG ANALYTICS</div><div class="navlabel">DASHBOARD MODES</div><nav class="nav"><button class="active" data-mode="overview"><span class="num">01</span><span class="txt">Inventory Overview</span></button><button data-mode="reorder"><span class="num">02</span><span class="txt">Reorder Analysis</span></button><button data-mode="catalog"><span class="num">03</span><span class="txt">Drug Classification</span></button></nav><div class="sidefoot">DATA SOURCE<br><b style="color:#dce8f8">drugs.json</b><br><span id="sideCount">100 records</span><br>Local data dashboard</div></aside>
+<main class="main"><header class="top"><div><div class="eyebrow">PHARMACY DATA INTELLIGENCE</div><div class="title" id="pageTitle">Inventory Overview</div><div class="desc" id="pageDesc">ภาพรวมรายการยาและโครงสร้างข้อมูลในบัญชีรายการยา</div></div><div class="actions"><span class="status" id="dataStatus">● Loaded from drugs.json</span><label class="btn" for="jsonFile">↥ โหลด JSON ใหม่</label><input class="fileinput" id="jsonFile" type="file" accept=".json,application/json"><button class="btn" id="themeBtn" title="สลับ Dark / Light mode">🌙</button><button class="btn" id="reset">Reset filters</button></div></header>
+<div class="filters"><input id="search" placeholder="ค้นหา SKU, Generic name, Strength, ATC code ..."><select id="category"><option value="">ทุกหมวดหมู่</option></select><select id="form"><option value="">ทุกรูปแบบยา</option></select><select id="unit"><option value="">ทุกหน่วยนับ</option></select></div>
+<div class="note">หมายเหตุ: เป็นข้อมูลรายการยาและเกณฑ์ Reorder เท่านั้น ไม่ใช่ยอดคงเหลือจริง</div>
+<section class="mode active" id="overview"><div class="kpis" id="kpiOverview"></div><div class="grid"><article class="card span-6"><div class="cardhead"><div><h3>สัดส่วนตามหมวดหมู่</h3><div class="caption">จำนวน SKU ในแต่ละหมวด</div></div></div><div class="chart" id="pieCategory"></div></article><article class="card span-6"><div class="cardhead"><div><h3>รูปแบบยา</h3><div class="caption">จำนวน SKU ตามรูปแบบยา</div></div></div><div class="chart" id="donutForm"></div></article></div></section>
+<section class="mode" id="reorder"><div class="kpis" id="kpiReorder"></div><div class="grid"><article class="card span-6"><div class="cardhead"><div><h3>การกระจายค่า Reorder Level</h3><div class="caption">จำนวนรายการในแต่ละช่วงค่า</div></div></div><div class="chart" id="histogram"></div></article><article class="card span-6"><div class="cardhead"><div><h3>Reorder Level สูงสุด 10 รายการ</h3><div class="caption">เรียงจากมากไปน้อย</div></div></div><div class="chart" id="topReorder"></div></article><article class="card span-12"><div class="cardhead"><div><h3>ค่าเฉลี่ย Reorder Level ตามหมวด</h3><div class="caption">เปรียบเทียบค่าเฉลี่ยระหว่างหมวด</div></div></div><div class="chart" id="avgReorder"></div></article></div></section>
+<section class="mode" id="catalog"><div class="kpis" id="kpiCatalog"></div><div class="grid"><article class="card span-12"><div class="cardhead"><div><h3>สัดส่วนรายการยาตามหมวดหมู่</h3><div class="caption">ขนาดพื้นที่แทนจำนวน SKU</div></div></div><div id="treemap" class="treemap"></div></article><article class="card span-12"><div class="cardhead"><div><h3>รูปแบบยาแยกตามหมวด</h3><div class="caption">สัดส่วนรูปแบบยาในแต่ละหมวด</div></div></div><div class="chart" id="stacked"></div></article></div></section>
+<article class="card"><div class="cardhead"><div><h3>รายการยา</h3><div class="caption"><span id="rowCount">0</span> รายการตามตัวกรอง</div></div><span class="tag">LIVE FILTER</span></div><div class="tablewrap"><table><thead><tr><th>SKU</th><th>ชื่อสามัญ</th><th>ความแรง</th><th>รูปแบบ</th><th>หน่วย</th><th>หมวดหมู่</th><th>ATC</th><th>Reorder</th></tr></thead><tbody id="tbody"></tbody></table></div></article>
+<footer class="smallmuted" style="text-align:right;margin-top:18px">MEDINSIGHT · แหล่งข้อมูล: <span id="footerSource">กำลังโหลด…</span></footer></main></div>
+<script>
+(async()=>{
+// เรียกข้อมูลทะเบียนยาผ่าน API ของระบบเท่านั้น
+let raw, all=[], mode='overview', DATA_AS_OF='', DATA_SOURCE='fallback';
+async function getJson(path){const r=await fetch(path);if(!r.ok)throw new Error(path+' '+r.status);return r.json()}
+try{
+ // เรียก /api/data พร้อม timeout 8 วินาที และใช้เฉพาะ drugs.items
+ const ctl=new AbortController(), timer=setTimeout(()=>ctl.abort(),8000);
+ try{const r=await fetch('/api/data',{signal:ctl.signal,cache:'no-store'});if(!r.ok)throw new Error('API '+r.status);const d=await r.json();if(!d.drugs?.items)throw new Error('ไม่พบ drugs.items');raw=d.drugs;DATA_AS_OF=d.drugs.meta?.as_of||d.stock?.meta?.as_of||'';DATA_SOURCE='supabase';}
+ finally{clearTimeout(timer)}
+}catch(err){
+ // ทางสำรองเมื่อ API ล้มเหลว/หมดเวลา: อ่านไฟล์ JSON ภายใน data
+ raw=await getJson('./data/drugs_update.json').catch(()=>getJson('./data/drugs.json'));DATA_AS_OF=raw.meta?.as_of||'';DATA_SOURCE='fallback';
+}
+all=raw.items||[];
+const colors=['#394d45','#637a77','#040404','#e7cfb9','#8a9d97','#2b3b36','#dcd8c0','#b8c7c2','#5a6e68','#42564f','#94a8a2','#1f2c28','#c4b29a','#718179'];
+const $=id=>document.getElementById(id), fmt=n=>Number(n||0).toLocaleString('en-US'), uniq=a=>[...new Set(a.filter(x=>x!==null&&x!==undefined&&x!==''))], countBy=(arr,key)=>arr.reduce((o,x)=>(o[x[key]||'ไม่ระบุ']=(o[x[key]||'ไม่ระบุ']||0)+1,o),{}), esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function filtered(){let q=$('search').value.trim().toLowerCase(),cat=$('category').value,form=$('form').value,unit=$('unit').value;return all.filter(x=>(!q||[x.sku,x.generic_name,x.strength,x.dosage_form,x.unit,x.category,x.atc_code].some(v=>String(v||'').toLowerCase().includes(q)))&&(!cat||x.category===cat)&&(!form||x.dosage_form===form)&&(!unit||x.unit===unit))}
+function setOptions(id,values,label){let el=$(id),v=el.value;el.innerHTML=`<option value="">${label}</option>`+values.sort((a,b)=>String(a).localeCompare(String(b),'th')).map(x=>`<option>${esc(x)}</option>`).join('');el.value=v}
+function kpis(id,items,kind){let cards;if(kind==='reorder'){let a=items.map(x=>+x.reorder_level).filter(Number.isFinite).sort((x,y)=>x-y),mid=Math.floor(a.length/2),median=a.length?(a.length%2?a[mid]:(a[mid-1]+a[mid])/2):null;cards=[['จำนวนรายการ',items.length,'SKU ที่กรองไว้'],['ค่าเฉลี่ย',a.length?(a.reduce((s,v)=>s+v,0)/a.length).toFixed(1):'—','Reorder Level'],['ค่ามัธยฐาน',median===null?'—':fmt(median),'Reorder Level'],['ค่าสูงสุด',a.length?fmt(a[a.length-1]):'—','Reorder Level'],['ค่าต่ำสุด',a.length?fmt(a[0]):'—','Reorder Level']]}else if(kind==='catalog'){let gc=countBy(items,'generic_name'),multi=Object.values(gc).filter(v=>v>1).length;cards=[['รายการยา',items.length,'SKU ทั้งหมด'],['ชื่อสามัญซ้ำหลาย SKU',multi,'Generic names'],['หมวดหมู่',uniq(items.map(x=>x.category)).length,'Categories'],['รูปแบบยา',uniq(items.map(x=>x.dosage_form)).length,'Dosage forms']]}else{cards=[['รายการยา',items.length,'SKU ทั้งหมด'],['หมวดหมู่',uniq(items.map(x=>x.category)).length,'Categories'],['ชื่อสามัญ',uniq(items.map(x=>x.generic_name)).length,'Generic names'],['รหัส ATC',uniq(items.map(x=>x.atc_code)).length,'ATC codes'],['รูปแบบยา',uniq(items.map(x=>x.dosage_form)).length,'Dosage forms']]};$(id).innerHTML=cards.map((c,i)=>`<div class="kpi"><div class="label">${c[0]}</div><div class="value">${fmtMaybe(c[1])}</div><div class="hint">${c[2]}</div></div>`).join('')}
+function fmtMaybe(v){return typeof v==='number'?fmt(v):v}
+function svgWrap(id,body,view='0 0 600 270'){ $(id).innerHTML=`<svg viewBox="${view}" role="img">${body}</svg>` }
+function pie(id,dict,hole=false){let entries=Object.entries(dict).sort((a,b)=>b[1]-a[1]),total=entries.reduce((s,x)=>s+x[1],0)||1,cx=175,cy=130,r=hole?92:102,angle=-Math.PI/2,paths='';entries.forEach(([name,val],i)=>{let a=val/total*Math.PI*2,x1=cx+r*Math.cos(angle),y1=cy+r*Math.sin(angle);angle+=val/total*Math.PI*2;let x2=cx+r*Math.cos(angle),y2=cy+r*Math.sin(angle),large=val/total>.5?1:0;paths+=`<path d="M ${cx} ${cy} L ${x1} ${y1} A ${r} ${r} 0 ${large} 1 ${x2} ${y2} Z" fill="${colors[i%colors.length]}" stroke="white" stroke-width="2"/>`;});if(hole)paths+=`<circle cx="${cx}" cy="${cy}" r="53" fill="white"/><text x="${cx}" y="126" text-anchor="middle" font-size="23" font-weight="800" fill="#17243a">${fmt(total)}</text><text x="${cx}" y="145" text-anchor="middle" font-size="10" fill="#8291a6">TOTAL SKU</text>`;let legend=entries.map(([n,v],i)=>`<div class="leg"><i class="dot" style="background:${colors[i%colors.length]}"></i>${esc(n)} <b>${fmt(v)}</b></div>`).join('');$(id).innerHTML=`<div style="display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;height:100%"><svg viewBox="0 0 350 260" style="width:min(55%,300px);height:245px">${paths}</svg><div class="legend" style="display:flex;flex-direction:column;max-height:240px;overflow:auto">${legend}</div></div>`}
+function bars(id,dict,horizontal=false){let e=Object.entries(dict).sort((a,b)=>b[1]-a[1]),max=Math.max(1,...e.map(x=>x[1]));if(horizontal){let h=Math.max(250,e.length*25),body='';e.forEach(([n,v],i)=>{let y=i*25+5,w=v/max*300;body+=`<text x="0" y="${y+13}" font-size="10" fill="#66768d">${esc(n).slice(0,24)}</text><rect x="175" y="${y}" width="${w}" height="15" rx="4" fill="${colors[i%colors.length]}"/><text x="${180+w}" y="${y+12}" font-size="10" fill="#33445f">${fmt(v)}</text>`});svgWrap(id,body,`0 0 540 ${h}`);$(id).querySelector('svg').style.height=h+'px';}else{let w=600,base=225,slot=w/Math.max(e.length,1),body=`<line x1="35" y1="${base}" x2="590" y2="${base}" stroke="#dce4ee"/>`;e.forEach(([n,v],i)=>{let bh=v/max*175,x=42+i*slot,barw=Math.min(30,slot*.58);body+=`<rect x="${x}" y="${base-bh}" width="${barw}" height="${bh}" rx="4" fill="${colors[i%colors.length]}"/><text x="${x+barw/2}" y="${base-bh-7}" text-anchor="middle" font-size="10" fill="#53647d">${fmt(v)}</text><text transform="translate(${x+barw/2},${base+10}) rotate(48)" font-size="9" fill="#74839a">${esc(n).slice(0,18)}</text>`});svgWrap(id,body,'0 0 610 270')}}
+function histogram(id,items){let a=items.map(x=>+x.reorder_level).filter(Number.isFinite),max=Math.max(1,...a),min=Math.min(0,...a),bins=8,counts=Array(bins).fill(0);a.forEach(v=>counts[Math.min(bins-1,Math.floor(v/(max+1)*bins))]++);let peak=Math.max(1,...counts),body=`<line x1="35" y1="220" x2="590" y2="220" stroke="#dce4ee"/>`;counts.forEach((v,i)=>{let x=45+i*67,bh=v/peak*170;body+=`<rect x="${x}" y="${220-bh}" width="48" height="${bh}" rx="4" fill="#3478df"/><text x="${x+24}" y="${215-bh}" text-anchor="middle" font-size="10" fill="#53647d">${v}</text><text x="${x+24}" y="238" text-anchor="middle" font-size="9" fill="#74839a">${Math.round(i*max/bins)}–${Math.round((i+1)*max/bins)}</text>`});svgWrap(id,body,'0 0 610 260')}
+function treemap(items){let e=Object.entries(countBy(items,'category')).sort((a,b)=>b[1]-a[1]),total=e.reduce((s,x)=>s+x[1],0)||1;$('treemap').innerHTML=e.map(([n,v],i)=>`<div class="treecell" style="grid-column:span ${Math.max(1,Math.round(v/total*12))};background:${colors[i%colors.length]}"><b>${esc(n)}</b><span>${v} SKU · ${(v/total*100).toFixed(1)}%</span></div>`).join('')}
+function stacked(items){let cats=Object.keys(countBy(items,'category')),forms=uniq(items.map(x=>x.dosage_form)),max=Math.max(1,...cats.map(c=>items.filter(x=>x.category===c).length)),body='';cats.forEach((c,i)=>{let y=i*24+4,x0=180;body+=`<text x="0" y="${y+13}" font-size="10" fill="#66768d">${esc(c)}</text>`;forms.forEach((f,j)=>{let v=items.filter(x=>x.category===c&&x.dosage_form===f).length,w=v/max*330; if(v){body+=`<rect x="${x0}" y="${y}" width="${w}" height="15" fill="${colors[j%colors.length]}"/><title>${esc(c)} · ${esc(f)}: ${v}</title>`;x0+=w}});body+=`<text x="${x0+5}" y="${y+12}" font-size="9" fill="#53647d">${items.filter(x=>x.category===c).length}</text>`});let h=Math.max(250,cats.length*24+15);svgWrap('stacked',body,`0 0 600 ${h}`);$('stacked').querySelector('svg').style.height=h+'px';$('stacked').insertAdjacentHTML('beforeend','<div class="legend">'+forms.map((f,i)=>`<div class="leg"><i class="dot" style="background:${colors[i%colors.length]}"></i>${esc(f)}</div>`).join('')+'</div>')}
+function render(){let items=filtered();kpis('kpiOverview',items);kpis('kpiReorder',items,'reorder');kpis('kpiCatalog',items);pie('pieCategory',countBy(items,'category'));pie('donutForm',countBy(items,'dosage_form'),true);histogram('histogram',items);bars('topReorder',Object.fromEntries([...items].sort((a,b)=>(+b.reorder_level||0)-(+a.reorder_level||0)).slice(0,10).map(x=>[x.sku,+x.reorder_level||0])),true);let groups={};items.forEach(x=>(groups[x.category]??=[]).push(+x.reorder_level||0));bars('avgReorder',Object.fromEntries(Object.entries(groups).map(([k,a])=>[k,a.reduce((s,v)=>s+v,0)/(a.length||1)])));treemap(items);stacked(items);$('tbody').innerHTML=items.map(x=>`<tr><td><b>${esc(x.sku)}</b></td><td>${esc(x.generic_name)}</td><td>${esc(x.strength)}</td><td>${esc(x.dosage_form)}</td><td>${esc(x.unit)}</td><td><span class="tag">${esc(x.category)}</span></td><td>${esc(x.atc_code)}</td><td>${fmt(x.reorder_level)}</td></tr>`).join('')||'<tr><td colspan="8" class="empty">ไม่พบรายการที่ตรงกับตัวกรอง</td></tr>';$('rowCount').textContent=fmt(items.length)}
+const modeInfo={overview:['Inventory Overview','ภาพรวมรายการยาและโครงสร้างข้อมูลในบัญชีรายการยา'],reorder:['Stock & Reorder Analysis','วิเคราะห์การกระจายและเกณฑ์ Reorder Level จากข้อมูลรายการยา'],catalog:['Drug Catalog & Classification','วิเคราะห์หมวดหมู่ รูปแบบยา และการจำแนกประเภท']};document.querySelectorAll('[data-mode]').forEach(b=>b.onclick=()=>{mode=b.dataset.mode;document.querySelectorAll('[data-mode]').forEach(x=>x.classList.toggle('active',x===b));document.querySelectorAll('.mode').forEach(x=>x.classList.toggle('active',x.id===mode));$('pageTitle').textContent=modeInfo[mode][0];$('pageDesc').textContent=modeInfo[mode][1]});['search','category','form','unit'].forEach(id=>$(id).addEventListener(id==='search'?'input':'change',render));$('reset').onclick=()=>{['search','category','form','unit'].forEach(id=>$(id).value='');render()};function init(){$('dataStatus').className=DATA_SOURCE==='supabase'?'status source-ok':'status source-fallback';$('dataStatus').textContent=DATA_SOURCE==='supabase'?'● ข้อมูลจาก Supabase · '+DATA_AS_OF:'● ข้อมูลสำรองจากไฟล์ (ไม่ใช่ข้อมูลล่าสุด) · ทดสอบผ่านลิงก์ Vercel เท่านั้น (Live Server ไม่รัน /api)';$('footerSource').textContent=DATA_SOURCE==='supabase'?'/api/data · Supabase · '+DATA_AS_OF:'./data/drugs.json (ข้อมูลสำรอง ไม่ใช่ข้อมูลล่าสุด)';const saved=localStorage.getItem('theme')||'light';if(saved==='dark')document.body.dataset.theme='dark';updateThemeBtn();$('themeBtn').onclick=()=>{const dark=document.body.dataset.theme==='dark';if(dark)delete document.body.dataset.theme;else document.body.dataset.theme='dark';localStorage.setItem('theme',dark?'light':'dark');updateThemeBtn()};function updateThemeBtn(){$('themeBtn').textContent=document.body.dataset.theme==='dark'?'☀️':'🌙'}setOptions('category',uniq(all.map(x=>x.category)),'ทุกหมวดหมู่');setOptions('form',uniq(all.map(x=>x.dosage_form)),'ทุกรูปแบบยา');setOptions('unit',uniq(all.map(x=>x.unit)),'ทุกหน่วยนับ');$('sideCount').textContent=fmt(all.length)+' records';render()}$('jsonFile').onchange=async e=>{let f=e.target.files[0];if(!f)return;try{let d=JSON.parse(await f.text());if(!Array.isArray(d.items))throw Error('ไม่พบ items array');raw=d;all=d.items;$('dataStatus').textContent='● Loaded: '+f.name;init()}catch(err){alert('ไฟล์ JSON ไม่ถูกต้อง หรือไม่มี items array')}};init();
+
+})();</script></body></html>
